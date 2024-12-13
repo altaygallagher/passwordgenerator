@@ -2,3 +2,13 @@
   for = "/*"
   [headers.values]
     Content-Security-Policy = "script-src 'self' 'unsafe-eval'"
+
+[[plugins]]
+package = "netlify-plugin-csp-generator"
+ 
+  [plugins.inputs]
+  buildDir = "dist"  // the path for the publish directory in Netlify
+ 
+  [plugins.inputs.policies]
+    defaultSrc = "'self'"
+    styleSrc = "'self' 'unsafe-hashes'"
